@@ -5,6 +5,7 @@
  */
 package mvc.modelo.dao;
 
+import java.io.Serializable;
 import mvc.modelo.dominio.ExcepcionAlquilerVehiculos;
 import mvc.modelo.dominio.vehiculo.TipoVehiculo;
 import mvc.modelo.dominio.vehiculo.Vehiculo;
@@ -13,11 +14,13 @@ import mvc.modelo.dominio.vehiculo.Vehiculo;
  *
  * @author bogdan
  */
-public class Vechiculos {
+public class Vechiculos implements Serializable {
 
     private Vehiculo[] vehiculos;
 
     private final int MAX_VEHICULOS = 20;
+    
+    private static final long serialVersionUID= 1L;
 
     public Vechiculos() {
         vehiculos = new Vehiculo[MAX_VEHICULOS];
