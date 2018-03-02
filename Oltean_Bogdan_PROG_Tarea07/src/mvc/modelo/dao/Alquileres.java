@@ -5,6 +5,7 @@
  */
 package mvc.modelo.dao;
 
+import java.io.Serializable;
 import mvc.modelo.dominio.Alquiler;
 import mvc.modelo.dominio.Cliente;
 import mvc.modelo.dominio.ExcepcionAlquilerVehiculos;
@@ -14,10 +15,12 @@ import mvc.modelo.dominio.vehiculo.Vehiculo;
  *
  * @author bogdan
  */
-public class Alquileres {
+public class Alquileres implements Serializable {
     private Alquiler[] alquileres;
     
     private final int MAX_ALQUILERES=20;
+    
+    private static final long serialVersionUID=1L;
     
     public Alquileres(){
         alquileres = new Alquiler[MAX_ALQUILERES];
