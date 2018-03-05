@@ -39,7 +39,7 @@ public class Alquileres implements Serializable {
         return alquileres.clone();
     }
 
-    public void leerTrabajos() {
+    public void leerAlquileres() {
         File fichero = new File(FICHERO_ALQUILERES);
         ObjectInputStream entrada;
         try {
@@ -58,7 +58,7 @@ public class Alquileres implements Serializable {
         }
     }
 
-    public void escribirTrabajos() {
+    public void escribirAlquileres() {
         File fichero = new File(FICHERO_ALQUILERES);
         try {
             ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(fichero));

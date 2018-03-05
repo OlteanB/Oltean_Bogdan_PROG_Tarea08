@@ -29,8 +29,11 @@ public class ControladorAlquilerVehiculos implements IControladorAlquilerVehicul
 
     @Override
     public void comenzar() {
-        modelo.anadirDatosPrueba();
+        //modelo.anadirDatosPrueba();
         vista.comenzar();
+        modelo.leerAlquileres();
+        modelo.leerClientes();
+        modelo.leerVehiculos();
     }
 
     @Override
@@ -88,9 +91,16 @@ public class ControladorAlquilerVehiculos implements IControladorAlquilerVehicul
         return modelo.obtenerAlquiler();
     }
 
-    @Override
+    /*@Override
     public void anadirDatosPrueba() {
         modelo.anadirDatosPrueba();
+    }*/
+    
+    @Override
+    public void salir(){
+        modelo.escribirAlquileres();
+        modelo.escribirClientes();
+        modelo.escribirVehiculos();
     }
 
 }

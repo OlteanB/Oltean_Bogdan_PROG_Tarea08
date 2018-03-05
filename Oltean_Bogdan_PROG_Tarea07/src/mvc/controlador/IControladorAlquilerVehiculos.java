@@ -15,12 +15,13 @@ import mvc.modelo.dominio.vehiculo.TipoVehiculo;
  * @author bogdan
  */
 public interface IControladorAlquilerVehiculos {
+    void salir();
 
     void abrirAlquiler(Cliente cliente, Vehiculo vehiculo);
 
     void anadirCliente(Cliente cliente);
 
-    void anadirDatosPrueba();
+    //void anadirDatosPrueba();
 
     void anadirVehiculo(Vehiculo vehiculo, TipoVehiculo tipoVehiculo);
 

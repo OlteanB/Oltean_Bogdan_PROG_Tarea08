@@ -15,27 +15,40 @@ import mvc.modelo.dominio.vehiculo.Vehiculo;
  * @author bogdan
  */
 public interface IModeloAlquilerVehiculo {
-    	void anadirCliente(Cliente cliente);
 
-	void borrarCliente(String dni);
+    void leerVehiculos();
 
-	Cliente buscarCliente(String dni);
+    void leerClientes();
 
-	Cliente[] obtenerClientes();
+    void leerAlquileres();
 
-	void anadirVehiculo(Vehiculo vehiculo, TipoVehiculo tipoVehiculo);
+    void escribirVehiculos();
 
-	void borrarVehiculo(String matricula);
+    void escribirClientes();
 
-	Vehiculo buscarVehiculo(String matricula);
+    void escribirAlquileres();
 
-	Vehiculo[] obtenerVehiculo();
+    void anadirCliente(Cliente cliente);
 
-	void abrirAlquiler(Cliente cliente, Vehiculo vehiculo);
+    void borrarCliente(String dni);
 
-	void cerrarAlquiler(Cliente cliente, Vehiculo vehiculo);
-        
-        Alquiler[] obtenerAlquiler();
+    Cliente buscarCliente(String dni);
 
-	void anadirDatosPrueba();
+    Cliente[] obtenerClientes();
+
+    void anadirVehiculo(Vehiculo vehiculo, TipoVehiculo tipoVehiculo);
+
+    void borrarVehiculo(String matricula);
+
+    Vehiculo buscarVehiculo(String matricula);
+
+    Vehiculo[] obtenerVehiculo();
+
+    void abrirAlquiler(Cliente cliente, Vehiculo vehiculo);
+
+    void cerrarAlquiler(Cliente cliente, Vehiculo vehiculo);
+
+    Alquiler[] obtenerAlquiler();
+
+    //void anadirDatosPrueba();
 }
