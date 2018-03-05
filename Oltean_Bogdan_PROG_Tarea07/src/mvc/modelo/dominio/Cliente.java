@@ -19,6 +19,7 @@ public class Cliente implements Serializable{
     private int identificador, numClientes;
     private DireccionPostal direccionPostal;
     private static final long serialVersionUID=1L;
+    private static int ultimoIdentificador=0;
 
     public Cliente(String nombre, String DNI, DireccionPostal direccionPostal) {
         this.nombre = new String(nombre);
@@ -26,7 +27,21 @@ public class Cliente implements Serializable{
         setDni (DNI);
         //direccion postal
         setDireccionPostal(direccionPostal);
+        asignarNuevoIdentificador();
 
+    }
+    
+    private void asignarNuevoIdentificador(){
+        ultimoIdentificador++;
+        identificador=ultimoIdentificador;
+    }
+    
+    public static void aumentarUltimoIdentificador(int cantidad){
+        if (cantidad>0) {
+            ultimoIdentificador+=cantidad;
+        }else{
+            throw new ExcepcionAlquilerVehiculos("Error al aumentar el identificador");
+        }
     }
 
     private void setNombre(String nombre) {
@@ -41,7 +56,7 @@ public class Cliente implements Serializable{
         }
     }
 
-    public void setIdentificador(int identificador) {
+    private void setIdentificador(int identificador) {
         this.identificador = identificador;
     }
 
@@ -74,7 +89,7 @@ public class Cliente implements Serializable{
         return dni;
     }
 
-    private int getIdentificador() {
+    public int getIdentificador() {
         return identificador;
     }
 

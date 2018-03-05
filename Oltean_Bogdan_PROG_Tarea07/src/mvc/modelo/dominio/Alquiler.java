@@ -5,6 +5,7 @@
  */
 package mvc.modelo.dominio;
 
+import java.io.Serializable;
 import mvc.modelo.dominio.vehiculo.Vehiculo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.Date;
  *
  * @author bogdan
  */
-public class Alquiler {
+public class Alquiler implements Serializable {
 
     private Cliente cliente;
     private Vehiculo vehiculo;
@@ -22,6 +23,7 @@ public class Alquiler {
     private final SimpleDateFormat FORMATO_FECHA = new SimpleDateFormat("dd/MM/yy");
     private final int MS_DIA = 1000 * 60 * 60 * 24;
     private final double PRECIO_DIA = 30;
+    private static final long serialVersionUID = 1L;
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo) {
         this.cliente = cliente;

@@ -5,6 +5,7 @@
  */
 package mvc.modelo.dominio.vehiculo;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import mvc.modelo.dominio.ExcepcionAlquilerVehiculos;
@@ -13,7 +14,7 @@ import mvc.modelo.dominio.ExcepcionAlquilerVehiculos;
  *
  * @author bogdan
  */
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Serializable {
     private DatosTecnicosVehiculo datosTecnicos;
 
     private String matricula, marca, modelo;
@@ -22,6 +23,8 @@ public abstract class Vehiculo {
     public final double FACTOR_CILINDRADA=0.0;
     public final double FACTOR_NUMERO_PLAZAS=0.0;
     public final double FACTOR_PMA=0.0;
+    
+    private static final long serialVersionUID = 1L;
     
     
     public abstract TipoVehiculo getTipoVehiculo();

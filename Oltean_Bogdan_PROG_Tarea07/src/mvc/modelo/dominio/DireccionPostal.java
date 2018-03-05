@@ -5,6 +5,7 @@
  */
 package mvc.modelo.dominio;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,11 +13,12 @@ import java.util.regex.Pattern;
  *
  * @author bogdan
  */
-public class DireccionPostal {
+public class DireccionPostal implements Serializable {
 
     private String codigoPostal;
     private String calle;
     private String localidad;
+    private static final long serialVersionUID = 1L;
     
     public DireccionPostal (DireccionPostal direccion) {
         setCalle (direccion.calle);
