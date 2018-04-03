@@ -58,21 +58,25 @@ public class Clientes {
     private int calcularUltimoIdentificador() {
         int ultimoIdentificador = 0;
         int i = 0;
-        while (clientes[i] != null) {
+        while (/*i<clientes.length &&*/ clientes[i] != null) {
             if (clientes[i].getIdentificador() > ultimoIdentificador) {
                 ultimoIdentificador = clientes[i].getIdentificador();
             }
+            i++;
         }
         return ultimoIdentificador;
     }
 
     public void escribirClientes() {
+        System.out.println("En escribirclientes de clientes");
         File fichero = new File(FICHERO_CLIENTES);
         try {
+            System.out.println("Bytes del fichero antes de escribir: "+fichero.length());
             ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(fichero));
             salida.writeObject((Cliente[]) clientes);
             salida.close();
             System.out.println("Fichero clientes escrito satisfactoriamente.");
+            System.out.println("Bytes del fichero despues de escribir: "+fichero.length());
         } catch (FileNotFoundException e) {
             System.out.println("No puedo crear el fichero de clientes");
         } catch (IOException e) {

@@ -33,11 +33,12 @@ public class Cliente implements Serializable{
     
     private void asignarNuevoIdentificador(){
         ultimoIdentificador++;
+        //aumentarUltimoIdentificador (1);
         identificador=ultimoIdentificador;
     }
     
     public static void aumentarUltimoIdentificador(int cantidad){
-        if (cantidad>0) {
+        if (cantidad>=0) {
             ultimoIdentificador+=cantidad;
         }else{
             throw new ExcepcionAlquilerVehiculos("Error al aumentar el identificador");
@@ -69,6 +70,7 @@ public class Cliente implements Serializable{
         this.nombre = cliente.nombre;
         this.dni = cliente.dni;
         this.direccionPostal = cliente.direccionPostal;
+        this.identificador=cliente.getIdentificador();
     }
 
     private boolean compruebaDni(String DNI) {

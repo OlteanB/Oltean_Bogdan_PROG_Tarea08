@@ -122,6 +122,7 @@ public class AlquilerVehiculo implements IModeloAlquilerVehiculo {
 
     @Override
     public void escribirClientes() {
+        System.out.println("En escribirclientes de alquilervehiculo");
         clientes.escribirClientes();
     }
 

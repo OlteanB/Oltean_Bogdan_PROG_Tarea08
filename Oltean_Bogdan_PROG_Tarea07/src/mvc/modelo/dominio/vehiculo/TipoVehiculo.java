@@ -5,13 +5,15 @@
  */
 package mvc.modelo.dominio.vehiculo;
 
+import java.io.Serializable;
+import java.util.Arrays;
 import mvc.modelo.dominio.ExcepcionAlquilerVehiculos;
 
 /**
  *
  * @author bogdan
  */
-public enum TipoVehiculo {
+public enum TipoVehiculo implements Serializable {
 
     TURISMO("Vehiculo turismo") {
         public Vehiculo getInstancia(String matricula, String marca, String modelo, DatosTecnicosVehiculo datosTecnicos) {

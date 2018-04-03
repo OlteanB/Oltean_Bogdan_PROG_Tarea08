@@ -5,11 +5,13 @@
  */
 package mvc.modelo.dominio.vehiculo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bogdan
  */
-public class Autobus extends Vehiculo {
+public class Autobus extends Vehiculo implements Serializable {
 
     public Autobus(String matricula, String marca, String modelo, DatosTecnicosVehiculo datosTecnicos) {
         super(matricula, marca, modelo, datosTecnicos);

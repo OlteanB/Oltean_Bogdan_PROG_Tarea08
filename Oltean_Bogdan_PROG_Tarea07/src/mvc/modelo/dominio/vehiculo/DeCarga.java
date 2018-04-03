@@ -5,11 +5,13 @@
  */
 package mvc.modelo.dominio.vehiculo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bogdan
  */
-public class DeCarga extends Vehiculo {
+public class DeCarga extends Vehiculo implements Serializable {
 
     public DeCarga(DeCarga deCarga) {
         super(deCarga);
