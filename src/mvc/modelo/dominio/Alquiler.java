@@ -77,7 +77,7 @@ public class Alquiler implements Serializable {
     
     public boolean equals (Object obj) {
         Alquiler a = (Alquiler) obj;
-        if(cliente.equals(a.cliente) && vehiculo.equals(a.vehiculo))
+        if(cliente.equals(a.cliente) && vehiculo.equals(a.vehiculo) && fecha.equals(a.fecha))
             return true;
         else
             return false;

@@ -37,7 +37,7 @@ public class Consola {
         do {
             System.out.print("\nElige una opción: ");
             ordinalOpcion = Entrada.entero();
-        } while (ordinalOpcion < 0 || ordinalOpcion > 11);
+        } while (ordinalOpcion < 0 || ordinalOpcion > 14);
         return ordinalOpcion;
     }
 

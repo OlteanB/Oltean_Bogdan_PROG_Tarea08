@@ -38,6 +38,12 @@ public interface IVistaAlquilerVehiculos {
     void listarClientes();
 
     void listarVehiculo();
+    
+    void obtenerAlquileresAbiertos();
+    
+    void obtenerAlquileresCliente();
+    
+    void obtenerAlquileresVehiculo();
 
     void salir();
 }
