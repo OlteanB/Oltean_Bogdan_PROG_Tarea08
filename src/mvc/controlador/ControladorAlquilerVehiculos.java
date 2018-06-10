@@ -92,6 +92,20 @@ public class ControladorAlquilerVehiculos implements IControladorAlquilerVehicul
         return modelo.obtenerAlquiler();
     }
 
+    @Override
+    public LinkedList<Alquiler> obtenerAlquileresAbiertos() {
+        return modelo.obtenerAlquileresAbiertos();
+    }
+
+    @Override
+    public LinkedList<Alquiler> obtenerAlquileresCliente(String dni) {
+        return modelo.obtenerAlquileresCliente(dni);
+    }
+
+    @Override
+    public LinkedList<Alquiler> obtenerAlquileresVehiculo(String matricula) {
+        return modelo.obtenerAlquileresVehiculo(matricula);
+    }
     /*@Override
     public void anadirDatosPrueba() {
         modelo.anadirDatosPrueba();

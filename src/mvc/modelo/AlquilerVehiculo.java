@@ -87,6 +87,21 @@ public class AlquilerVehiculo implements IModeloAlquilerVehiculo {
     public LinkedList<Alquiler> obtenerAlquiler() {
         return alquileres.getAlquiler();
     }
+    
+    @Override
+        public LinkedList<Alquiler> obtenerAlquileresAbiertos() {
+        return alquileres.obtenerAlquileresAbiertos();
+    }
+
+    @Override
+    public LinkedList<Alquiler> obtenerAlquileresCliente(String dni) {
+        return alquileres.obtenerAlquileresCliente(dni);
+    }
+
+    @Override
+    public LinkedList<Alquiler> obtenerAlquileresVehiculo(String matricula) {
+        return alquileres.obtenerAlquileresVehiculo(matricula);
+    }
 
     /*@Override
     public void anadirDatosPrueba() {

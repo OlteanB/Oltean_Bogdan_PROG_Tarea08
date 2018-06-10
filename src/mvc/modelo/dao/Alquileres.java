@@ -30,6 +30,7 @@ public class Alquileres implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private final String FICHERO_ALQUILERES = "datos"+File.separator+"alquileres.dat";
+    
     public Alquileres() {
         alquileres = new LinkedList<Alquiler>();
     }
@@ -107,7 +108,37 @@ public class Alquileres implements Serializable {
                 return;
             }
         }
-        throw new ExcepcionAlquilerVehiculos("No hay ningún trabajo abierto para ese vehículo");
+        throw new ExcepcionAlquilerVehiculos("No hay ningún alquiler abierto para ese vehículo");
 
+    }
+    
+    public LinkedList<Alquiler> obtenerAlquileresAbiertos(){
+        LinkedList<Alquiler> alquileresAbiertos = new LinkedList<Alquiler>();
+        for(Alquiler a: alquileres){
+            if(a.getDias()==0){
+                alquileresAbiertos.add(a);
+            }
+        }
+        return alquileresAbiertos;
+    }
+    
+    public LinkedList<Alquiler> obtenerAlquileresCliente(String dni){
+        LinkedList<Alquiler> alquileresCliente = new LinkedList<Alquiler>();
+        for(Alquiler a: alquileres){
+            if(a.getCliente().getDNI().equals(dni)){
+                alquileresCliente.add(a);
+            }
+        }
+        return alquileresCliente;
+    }
+    
+    public LinkedList<Alquiler> obtenerAlquileresVehiculo(String matricula){
+        LinkedList<Alquiler> alquileresVehiculo = new LinkedList<Alquiler>();
+        for(Alquiler a: alquileres){
+            if(a.getVehiculo().getMatricula().equals(matricula)){
+                alquileresVehiculo.add(a);
+            }
+        }
+        return alquileresVehiculo;
     }
 }

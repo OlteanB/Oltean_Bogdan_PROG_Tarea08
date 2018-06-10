@@ -51,5 +51,11 @@ public interface IModeloAlquilerVehiculo {
 
     LinkedList<Alquiler> obtenerAlquiler();
 
+    LinkedList<Alquiler> obtenerAlquileresAbiertos();
+
+    LinkedList<Alquiler> obtenerAlquileresCliente(String dni);
+
+    LinkedList<Alquiler> obtenerAlquileresVehiculo(String maritucla);
+
     //void anadirDatosPrueba();
 }

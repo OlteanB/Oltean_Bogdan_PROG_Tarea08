@@ -124,7 +124,7 @@ public class IUTextual implements IVistaAlquilerVehiculos {
         Consola.mostrarCabecera("Buscar vehiculo");
         String matricula = Consola.leerMatricula();
         Vehiculo vehiculoBuscado = controlador.buscarVehiculo(matricula);
-        String mensaje = (vehiculoBuscado != null) ? vehiculoBuscado.toString() : "El turismo no existe";
+        String mensaje = (vehiculoBuscado != null) ? vehiculoBuscado.toString() : "El vehiculo no existe";
         System.out.printf("%s%n%n", mensaje);
     }
 
@@ -187,34 +187,42 @@ public class IUTextual implements IVistaAlquilerVehiculos {
         }
         System.out.println("");
     }
-    
+
     @Override
-    public void obtenerAlquileresAbiertos(){
+    public void obtenerAlquileresAbiertos() {
         Consola.mostrarCabecera("Listado de alquileres abiertos");
         for (Alquiler alquiler : controlador.obtenerAlquiler()) {
-            if (alquiler != null && alquiler.getDias() == 0)
+            if (alquiler != null && alquiler.getDias() == 0) {
                 System.out.println(alquiler);
+            }
         }
     }
 
     @Override
-    public void obtenerAlquileresCliente(){
+    public void obtenerAlquileresCliente() {
         String dni = Consola.leerDni();
         Consola.mostrarCabecera("Listado de alquileres para ese cliente");
         for (Alquiler alquiler : controlador.obtenerAlquiler()) {
-            if (alquiler != null && alquiler.getCliente().getDNI().equals(dni))
+            if (alquiler != null && alquiler.getCliente().getDNI().equals(dni)) {
                 System.out.println(alquiler);
+            }
         }
     }
-    
+
     @Override
-    public void obtenerAlquileresVehiculo(){
-        
+    public void obtenerAlquileresVehiculo() {
         String matricula = Consola.leerMatricula();
-        Consola.mostrarCabecera("Listado de alquileres para ese vehiculo");
-        for (Alquiler alquiler : controlador.obtenerAlquiler()) {
-            if (alquiler != null && alquiler.getVehiculo().getMatricula().equals(matricula))
-                System.out.println(alquiler);
+        try {
+            controlador.buscarVehiculo(matricula);
+            Consola.mostrarCabecera("Listado de alquileres para ese vehiculo");
+            for (Alquiler alquiler : controlador.obtenerAlquileresVehiculo(matricula)) {
+                if (alquiler != null && alquiler.getVehiculo().getMatricula().equals(matricula)) {
+                    System.out.println(alquiler);
+                }
+            }
+        }catch(ExcepcionAlquilerVehiculos e){
+            System.out.printf("ERROR: %s%n%n", e.getMessage());
         }
+
     }
 }

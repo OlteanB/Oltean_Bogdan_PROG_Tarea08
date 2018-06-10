@@ -44,4 +44,9 @@ public interface IControladorAlquilerVehiculos {
 
     LinkedList<Vehiculo> obtenerVehiculos();
 
+    LinkedList<Alquiler> obtenerAlquileresAbiertos();
+    
+    LinkedList<Alquiler> obtenerAlquileresCliente(String dni);
+    
+    LinkedList<Alquiler> obtenerAlquileresVehiculo(String maritucla);
 }
